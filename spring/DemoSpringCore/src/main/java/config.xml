@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+            
+            <bean id="i1" class="Demo.IdCard">
+				<property name="idno" value="1001"></property>
+            	<property name="sname" value="Qspiders"></property>
+            	<property name="std" value="12"></property>
+            </bean>
+            
+            <bean id="s1" class="Demo.Student">
+	            <property name="id" value="101"></property>
+	            <property name="name" value="Pavan"></property>
+	            <property name="age" value="22"></property>
+	            <property name="idCard" ref="i1"></property>
+            </bean>
+            
+            <bean id="i2" class="Demo.IdCard">
+	            <constructor-arg value="1002"></constructor-arg>
+	            <constructor-arg value="JSP"></constructor-arg>
+	            <constructor-arg value="12"></constructor-arg>
+            </bean>
+            
+            <bean id="s2" class="Demo.Student">
+	            <constructor-arg value="102"></constructor-arg>
+	            <constructor-arg value="smith"></constructor-arg>
+	            <constructor-arg value="25"></constructor-arg>
+	            <constructor-arg ref="i2"></constructor-arg>
+            </bean>
+           
+</beans>
